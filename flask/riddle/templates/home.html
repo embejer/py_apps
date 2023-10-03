@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddle Me</title>
+    <link rel="stylesheet" href="..\static\bootstrap.min.css">
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+
+<body>
+    <div class="container-md text-center">
+        <div class="col-md-8">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Riddle me crazy !!!</h1>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-9">
+                    <input class="form-control" id="count" type="number" min="1" max="5" placeholder="Number of Riddle/s">
+                </div>
+                <div class="col-md-3">
+                    <input class="btn btn-primary" id="generate" type="button" value="Generate a Riddle">
+                </div>
+            </div>
+            
+            <div class="row">
+                {% for riddle in riddles %}
+                <div class="col-md-12 riddle">
+                    <h4>"{{ riddle.riddle }}"</h4>
+                    <h3>Answer: {{ riddle.answer }} </h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    /*
+    this page uses Jinja to use python functions
+    and for showing variable data. 
+    */
+
+    /*
+    grabs the element and assigns it to a variable
+    */
+    const generate = document.querySelector('#generate')
+
+    /*
+    adds an event listener for a click
+    */
+    generate.addEventListener('click', () => {
+
+        /* gets the value of the textbox for count */
+        let count = document.querySelector('#count').value
+
+        /* converts to integer or number */
+        count = parseInt(count)
+
+        /* 
+        checks if count value is a number or integer
+        if not them it will default to zero(0)
+        */
+        count = Number.isInteger(count) ? count : 0
+
+        /* assigns an href to button when clicked */
+        location.href = 'http://localhost:5000/' + count
+    });
+
+</script>

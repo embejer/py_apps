@@ -1,0 +1,18 @@
+/*
+added margin a the bottom of every
+row, heading 3 & 4
+*/
+.row, h3, h4 {
+    margin-bottom: 20px;
+}
+
+/*
+added a riddle class (.riddle)
+put a border, padding and margin
+*/
+.riddle {
+    border: 2px solid tomato;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}

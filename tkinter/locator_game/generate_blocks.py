@@ -7,8 +7,8 @@ class Board:
         # self.path = '   '
         self.wall = 1
         self.path = 0
-        self.height = 21
-        self.width = 25
+        self.height = 31
+        self.width = 31
         self.no_of_blockers = self.width // 2
 
     def create_board(self) -> None:

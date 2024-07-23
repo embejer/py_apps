@@ -1,13 +1,11 @@
-'''
-imported Flask
-'''
-from flask import Flask, render_template
-
-'''
+"""
 imported a different module
 riddle.py contains the function that requests riddles
-'''
+imported Flask
+"""
+
 import riddle
+from flask import Flask, render_template
 
 '''
 created a flask application
@@ -22,10 +20,10 @@ these are the routes or endpoints that needs to be hit or access
 @app.route('/', defaults={'count': 0}, methods=['GET'])
 @app.route('/<int:count>', methods=['GET'])
 def show_riddles(count):
-    '''
+    """
     we call on the get_riddles function from riddle.py
     get_riddles has (1) one argument.
-    '''
+    """
     riddles = riddle.get_riddles(count)
 
     '''

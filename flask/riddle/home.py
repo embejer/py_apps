@@ -14,14 +14,14 @@ created a flask application
 '''
 app = Flask(__name__)
 
-
 '''
 these are the routes or endpoints that needs to be hit or access
 '''
+
+
 @app.route('/', defaults={'count': 0}, methods=['GET'])
 @app.route('/<int:count>', methods=['GET'])
 def show_riddles(count):
-
     '''
     we call on the get_riddles function from riddle.py
     get_riddles has (1) one argument.
